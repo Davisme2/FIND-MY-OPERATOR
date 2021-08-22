@@ -1,0 +1,3 @@
+Bonjour Phillipe.
+Bien venu sur mon projet
+Alors ce ci est un projet intitulé find my operator. Le projet consiste à déterminer l'opérateur réseau en fonction du numéro de téléphone. On aura une zone de saisir de numéro aussi il faut vérifier l'intégrité des caractères saisir par l'utilisateur. Lorsque celui-ci valide, l'opérateur téléphonique s'affiche. Les opérateurs à vérifier son ORANGE, MTN et MOOV avec les 10 chiffres.
