@@ -8,7 +8,7 @@
     <meta name="generator" content="Hugo 0.87.0">
     <title>Cover Template · Bootstrap v5.1</title> 
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap CSS -->
 <link href="bootstrap.min.css" rel="stylesheet">
 
     <!-- CSS -->
