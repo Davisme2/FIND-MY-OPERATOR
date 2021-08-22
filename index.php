@@ -46,7 +46,7 @@
   
   <main class="px-3">
       <h1>Découvrez votre opérateur mobile</h1>
-    <p class="lead">Grâce à ce programme, découvrez l'opérateur de votre numéro téléphone en inscrivant votre numéro</p>
+    <p class="lead">Grâce à ce programme, découvrez l'opérateur de votre numéro de téléphone en inscrivant votre numéro</p>
   </main>
   <form class="row g-3" action="index.php" methode="POST">
     <div class="col-auto">
