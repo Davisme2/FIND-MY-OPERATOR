@@ -1,3 +1,13 @@
+<?php
+
+require_once 'numerotation.poo.php';
+
+$_POST['chiffre'] = new Numero();
+
+var_dump($_POST['chiffre']);
+
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -55,7 +65,7 @@
     </div>
     <div class="col-auto">
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
-        <input type="number" class="form-control" id="inputPassword2" placeholder="Entrer le numero">
+        <input type="number" class="form-control" id="inputPassword2" name="chiffre" placeholder="Entrer le numero">
     </div>
     <div class="col-auto">
         <button type="submit" class="btn btn-primary mb-3">Valider</button>
