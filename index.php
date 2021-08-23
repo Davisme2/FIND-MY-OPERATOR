@@ -4,7 +4,7 @@ require_once 'numerotation.poo.php';
 
 $_POST['chiffre'] = new Numero();
 
-var_dump($_POST['chiffre']);
+var_dump($_POST['chiffre']->long_num);
 
 ?>
 
