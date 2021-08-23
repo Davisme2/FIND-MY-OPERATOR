@@ -6,9 +6,6 @@ $_POST = new Numero(array(
   'number' => []
 ));
 
-var_dump($_POST['number']->taille);
-
-
 ?>
 
 <!doctype html>
