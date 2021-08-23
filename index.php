@@ -62,7 +62,8 @@ require_once 'Number.php';
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
     </div>
     <div class="col-auto">
-        <!-- Ajout du formulaire html de saisie de numero -->
+        <input type="number" class="form-control" id="inputPassword2" name="' . $name . '" placeholder="Entrer le numero">
+        <button type="submit" class="btn btn-primary mb-3">Valider</button>
     </div>
   </form>
 
