@@ -3,10 +3,10 @@
 
 class Numero {
 
-    public $long_num = [];
+    public $num;
 
-    public function compter ($long_num) {
-        $this->long_num;
+    public function __construct($num) {
+        $this->num = $num;
     }
 
 }

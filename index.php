@@ -2,9 +2,11 @@
 
 require_once 'numerotation.poo.php';
 
-$_POST['chiffre'] = new Numero();
+$form = new Form(array(
+  'number' => []
+));
 
-var_dump($_POST['chiffre']->long_num);
+echo $form->input('numer');
 
 ?>
 
@@ -58,7 +60,7 @@ var_dump($_POST['chiffre']->long_num);
       <h1>Découvrez votre opérateur mobile</h1>
     <p class="lead">Grâce à ce programme, découvrez l'opérateur de votre numéro téléphone en inscrivant votre numéro</p>
   </main>
-  <form class="row g-3" action="index.php" methode="POST">
+  <form class="row g-3">
     <div class="col-auto">
         <label for="staticEmail2" class="visually-hidden">Email</label>
         <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Découvre ton opérateur téléphonique">
