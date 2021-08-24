@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Number.php';
+
 ?>
 
 <!doctype html>
@@ -62,8 +63,8 @@ require_once 'Number.php';
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
     </div>
     <div class="col-auto">
-        <input type="number" class="form-control" id="inputPassword2" name="' . $name . '" placeholder="Entrer le numero">
-        <button type="submit" class="btn btn-primary mb-3">Valider</button>
+        <input type="number" class="form-control" id="inputPassword2" name="numero" placeholder="Entre le numero" required="required">
+        <button type="submit" name="valider" class="btn btn-primary mb-3">Valider</button>
     </div>
   </form>
 

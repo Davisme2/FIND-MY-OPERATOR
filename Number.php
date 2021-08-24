@@ -12,6 +12,19 @@ class Number {
 
     public static function checkNumberOperator($number)
     {
+        if (isset($_POST['valider'])) {
+
+            if (isset($_POST['numero'])) {
+
+                if (!empty($_POST['numero'])) {
+                    $number = sizeof($_POST['numero']);
+                }
+                
+            }
+
+        }
+        
+        
         /**
          * $number est le numero saisi dans le champ numero du formulaire
          * Recupere les 2 premiers caracteres de $number
