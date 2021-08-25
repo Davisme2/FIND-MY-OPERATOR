@@ -1,7 +1,7 @@
 
 <?php
 
-class Numero {
+class Number {
 
     public $num = array();
 
