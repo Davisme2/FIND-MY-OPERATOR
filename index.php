@@ -1,11 +1,6 @@
 <?php
 
 require_once 'Number.php';
-
-$_POST = new Numero(array(
-  'number' => []
-));
-
 ?>
 
 <!doctype html>
@@ -67,6 +62,7 @@ $_POST = new Numero(array(
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
     </div>
     <div class="col-auto">
+        <!-- Ajout du formulaire html de saisie de numero -->
     </div>
   </form>
 
