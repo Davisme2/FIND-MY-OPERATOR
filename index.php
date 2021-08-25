@@ -1,6 +1,6 @@
 <?php
 
-require_once 'numerotation.poo.php';
+require_once 'Number.php';
 
 $_POST = new Numero(array(
   'number' => []
@@ -65,10 +65,8 @@ $_POST = new Numero(array(
     </div>
     <div class="col-auto">
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
-        <?php  echo $form->input('number'); ?> 
     </div>
     <div class="col-auto">
-        <?php  echo $form->submit(); ?>
     </div>
   </form>
 
