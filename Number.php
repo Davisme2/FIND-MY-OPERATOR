@@ -12,18 +12,14 @@ class Number {
 
     public static function checkNumberOperator($number)
     {
-        if (isset($_POST['valider'])) {
-
-            if (isset($_POST['numero'])) {
-
-                if (!empty($_POST['numero'])) {
-                    $number = sizeof($_POST['numero']);
-                }
-                
-            }
-
-        }
         
+        $number = substr($number, 0, -8);
+
+        if (in_array($number, TAB_OPERATOR)) {
+            return TAB_OPERATOR;
+        } else {
+            echo "L'Opérateur n'existe pas";
+        }
         
         /**
          * $number est le numero saisi dans le champ numero du formulaire

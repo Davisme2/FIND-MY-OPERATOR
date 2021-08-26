@@ -63,17 +63,52 @@ require_once 'Number.php';
         <label for="inputPassword2" class="visually-hidden">Entrez le numero</label>
     </div>
     <div class="col-auto">
-        <input type="number" class="form-control" id="inputPassword2" name="numero" placeholder="Entre le numero" required="required">
+        <input type="number" class="form-control" id="inputPassword2" name="numero" placeholder="Entre le numero " required="required">
         <button type="submit" name="valider" class="btn btn-primary mb-3">Valider</button>
     </div>
-  </form>
 
+    <!-- Sécurité pour le input du formulaire -->
+    <?php 
+    
+        if (isset($_POST['valider'])) { // Si le button submit est défini
+
+          if (isset($_POST['numero'])) { // Si la variable global $_POST['numero'] est définie
+
+              if (!empty($_POST['numero'])) { // Si la variable glogbal $_POST['numero'] n'est pas vide
+
+                  // Tant que l'utilisateur va entrer un nombre de caractère inférieur à 10
+                  while (strlen($_POST['numero']) < 10) {
+                    
+                    echo '<div class="alert alert-danger"><p class="lead">Minimum 10 chiffres s\'il vous plait</p></div>';
+                    break;
+
+                  }
+
+                  // Tant que l'utilisateur va entrer un nombre de caractère supérieur à 10
+                  while ( strlen($_POST['numero']) > 10) {
+
+                    echo '<div class="alert alert-danger"><p class="lead">Vous avez depassé les 10. <br> Veuillez recomencer s\'il vous plait</p></div>';
+                    break;
+
+                  }
+
+                  // Tant que l'utilisateur va respecter les 10 caractère demandé
+                  while (strlen($_POST['numero']) === 10) {
+                    echo '<div class="alert alert-success"><p class="lead">Vous avez entrez les 10 chiffres<p></div>';
+                    break;
+                  }
+              }
+              
+          }
+
+        }
+    
+    ?>
+  </form>
   <footer class="mt-auto text-white-50">
     <p>Copyright 2021 made by HELIOS64</p>
   </footer>
 </div>
-
-
     
   </body>
 </html>
