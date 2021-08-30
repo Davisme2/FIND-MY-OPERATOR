@@ -7,7 +7,7 @@ class Number {
     const TAB_OPERATOR = [
         'Orange' => '07',
         'Mtn' => '05',
-        'Moov', '01'
+        'Moov'=> '01'
     ];
 
     public static function checkNumberOperator($number)
@@ -15,10 +15,12 @@ class Number {
         
         $number = substr($number, 0, -8);
 
-        if (in_array($number, TAB_OPERATOR)) {
-            return TAB_OPERATOR;
-        } else {
-            echo "L'Opérateur n'existe pas";
+        if (in_array($number, self::TAB_OPERATOR)) {
+            foreach (self::TAB_OPERATOR as $key => $value) {
+                if ($value === $number) {
+                    return $key;
+                }
+            }
         }
         
         /**

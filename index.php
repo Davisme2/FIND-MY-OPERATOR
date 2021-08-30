@@ -69,40 +69,20 @@ require_once 'Number.php';
 
     <!-- Sécurité pour le input du formulaire -->
     <?php 
-    
-        if (isset($_POST['valider'])) { // Si le button submit est défini
+        if (isset($_POST['numero']) && $_POST['numero']) {
 
-          if (isset($_POST['numero'])) { // Si la variable global $_POST['numero'] est définie
-
-              if (!empty($_POST['numero'])) { // Si la variable glogbal $_POST['numero'] n'est pas vide
-
-                  // Tant que l'utilisateur va entrer un nombre de caractère inférieur à 10
-                  while (strlen($_POST['numero']) < 10) {
-                    
-                    echo '<div class="alert alert-danger"><p class="lead">Minimum 10 chiffres s\'il vous plait</p></div>';
-                    break;
-
-                  }
-
-                  // Tant que l'utilisateur va entrer un nombre de caractère supérieur à 10
-                  while ( strlen($_POST['numero']) > 10) {
-
-                    echo '<div class="alert alert-danger"><p class="lead">Vous avez depassé les 10. <br> Veuillez recomencer s\'il vous plait</p></div>';
-                    break;
-
-                  }
-
-                  // Tant que l'utilisateur va respecter les 10 caractère demandé
-                  while (strlen($_POST['numero']) === 10) {
-                    echo '<div class="alert alert-success"><p class="lead">Vous avez entrez les 10 chiffres<p></div>';
-                    break;
-                  }
-              }
-              
-          }
-
+            if (strlen($_POST['numero']) !== 10 ) {
+                echo '<div class="alert alert-danger"><p class="lead">Ce champ Doit contenir 10 choffres</p></div>';
+            } else {
+                if (Number::checkNumberOperator($_POST['numero'])) {
+    ?>
+                 <div class="alert alert-success"><p class="lead"><?php echo Number::checkNumberOperator($_POST['numero'])?><p></div>
+      <?php
+                } else {
+                    echo '<div class="alert alert-danger"><p class="lead">Reseau invalide<p></div>';
+                }
+            }
         }
-    
     ?>
   </form>
   <footer class="mt-auto text-white-50">
