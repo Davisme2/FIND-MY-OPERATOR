@@ -69,14 +69,21 @@ require_once 'Number.php';
 
     <!-- Sécurité pour le input du formulaire -->
     <?php 
-        if (isset($_POST['numero']) && $_POST['numero']) {
+        if (isset($_POST['numero']) && $_POST['numero']) { 
+          // on vérifie si la variable $_POST exist et si elle contient une valeur
 
             if (strlen($_POST['numero']) !== 10 ) {
                 echo '<div class="alert alert-danger"><p class="lead">Ce champ Doit contenir 10 choffres</p></div>';
             } else {
-                if (Number::checkNumberOperator($_POST['numero'])) {
+                if (Number::checkNumberOperator($_POST['numero'])) { 
+                  /* 
+                  vérifier si la Methode statique renvoie une donnée valide ou bien un false
+                  *si la methode checkNumberOperator renvoi une donnée valide on affiche cette donnée avec la ligne 84
+                  *si la method checkNumberOperator renvoi un false alors on affiche la ligne 89
+                  */
     ?>
                  <div class="alert alert-success"><p class="lead"><?php echo Number::checkNumberOperator($_POST['numero'])?><p></div>
+                  
       <?php
                 } else {
                     echo '<div class="alert alert-danger"><p class="lead">Reseau invalide<p></div>';
