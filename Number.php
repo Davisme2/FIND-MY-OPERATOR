@@ -49,6 +49,13 @@ class Number {
     {
 
         $num = substr($num, 2, -6);
-        
+
+        if (in_array($num, self::TAB_NUMBER)) {
+            foreach (self::TAB_NUMBER as $k => $v) {
+                if ($v === $num) {
+                    return $k;
+                }
+            }
+        }
     }
 }

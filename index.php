@@ -75,7 +75,7 @@ require_once 'Number.php';
             if (strlen($_POST['numero']) !== 10 ) {
                 echo '<div class="alert alert-danger"><p class="lead">Veuillez entrer 10 chiffres</p></div>';
             } else {
-                if (Number::checkNumberOperator($_POST['numero'])) { 
+                if (Number::checkNumberOperator($_POST['numero'] && Number::checkFirstNumber($_POST['numero']))) { 
                   /* 
                   vérifier si la Methode statique renvoie une donnée valide ou bien un false
                   *si la methode checkNumberOperator renvoi une donnée valide on affiche cette donnée avec la ligne 84
@@ -92,6 +92,7 @@ require_once 'Number.php';
         }
     ?>
   </form>
+ <?php var_dump(Number::checkFirstNumber($_POST['numero'])); ?>
   <footer class="mt-auto text-white-50">
     <p>Copyright 2021 made by HELIOS64</p>
   </footer>
