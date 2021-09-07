@@ -6,11 +6,11 @@ class Number {
     // Tableau des operateurs
     const TAB_OPERATOR = [
         'Orange' => '07',
-        'Mtn' => '05',
+        'Mtn' => '04', // correction de 05 en 04
         'Moov'=> '01'
     ];
 
-    // Tableau des premiers nombre du num
+    // Tableau mulitidimentionel du deuxieme nombre du numero
     const TAB_NUMBER = [
         'Orange' => [
             '07', '08', '09', '77', '78', '79', '87', '88', '89'
@@ -31,7 +31,7 @@ class Number {
         if (in_array($number, self::TAB_OPERATOR)) {
             foreach (self::TAB_OPERATOR as $key => $value) {
                 if ($value === $number) {
-                    return $key;
+                    return $key; // renvoi $key maintenant au lieu de $value avant
                 }
             }
         }
@@ -48,14 +48,17 @@ class Number {
     public static function checkFirstNumber($num)
     {
 
-        $num = substr($num, 2, -6);
-
-        if (in_array($num, self::TAB_NUMBER)) {
+        $num = substr($num, 2, -6); // Recuperation du deuxieme nombre du numero saisi par le user
             foreach (self::TAB_NUMBER as $k => $v) {
-                if ($v === $num) {
-                    return $k;
+                
+                if (in_array($num, $v)) {
+
+                    foreach ($v as $r) {
+                        if ($r === $num) {
+                            return $k;
+                        }
+                    }
                 }
             }
-        }
     }
 }

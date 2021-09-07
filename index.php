@@ -75,13 +75,16 @@ require_once 'Number.php';
             if (strlen($_POST['numero']) !== 10 ) {
                 echo '<div class="alert alert-danger"><p class="lead">Veuillez entrer 10 chiffres</p></div>';
             } else {
-                if (Number::checkNumberOperator($_POST['numero'] && Number::checkFirstNumber($_POST['numero']))) { 
+                if (Number::checkNumberOperator($_POST['numero']) === Number::checkFirstNumber($_POST['numero'])) { 
                   /* 
-                  vérifier si la Methode statique renvoie une donnée valide ou bien un false
-                  *si la methode checkNumberOperator renvoi une donnée valide on affiche cette donnée avec la ligne 84
-                  *si la method checkNumberOperator renvoi un false alors on affiche la ligne 89
+                  vérifier si les deux Methodes statiques renvoient des données valide ou bien un false
+                  *si la methode checkNumberOperator renvoi un OPERATEUR valide
+                  *si la method checFirstNumber renvoi un OPERATEUR valide
+                  *si checkNumberOperator et checkFirstNumber renvoien le même OPERATEUR alor on l'affiche ligne 87
+                  *si non afficher Reseau invalide en cas de non concordance
                   */
     ?>
+                 
                  <div class="alert alert-success"><p class="lead"><?php echo Number::checkNumberOperator($_POST['numero'])?><p></div>
                   
       <?php
@@ -92,7 +95,13 @@ require_once 'Number.php';
         }
     ?>
   </form>
- <?php var_dump(Number::checkFirstNumber($_POST['numero'])); ?>
+
+ <?php 
+ if(isset($_POST['numero'])) {
+  var_dump(Number::checkFirstNumber($_POST['numero'])); ?>
+      <br>
+<?php var_dump(Number::checkNumberOperator($_POST['numero'])); } ?>
+
   <footer class="mt-auto text-white-50">
     <p>Copyright 2021 made by HELIOS64</p>
   </footer>
