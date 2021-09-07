@@ -73,7 +73,7 @@ require_once 'Number.php';
           // on vérifie si la variable $_POST exist et si elle contient une valeur
 
             if (strlen($_POST['numero']) !== 10 ) {
-                echo '<div class="alert alert-danger"><p class="lead">Ce champ Doit contenir 10 choffres</p></div>';
+                echo '<div class="alert alert-danger"><p class="lead">Veuillez entrer 10 chiffres</p></div>';
             } else {
                 if (Number::checkNumberOperator($_POST['numero'])) { 
                   /* 

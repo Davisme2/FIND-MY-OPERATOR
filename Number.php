@@ -10,6 +10,19 @@ class Number {
         'Moov'=> '01'
     ];
 
+    // Tableau des premiers nombre du num
+    const TAB_NUMBER = [
+        'Orange' => [
+            '07', '08', '09', '77', '78', '79', '87', '88', '89'
+        ],
+        'Mtn' => [
+            '04', '05', '06', '74', '75', '76', '84', '85', '86'
+        ],
+        'Moov' => [
+            '01', '02', '03', '70', '71', '72', '73', '80', '81', '82', '83'
+        ]
+    ];
+
     public static function checkNumberOperator($number)
     {
         
@@ -30,5 +43,12 @@ class Number {
          * si existe renvoie la clé
          * si n'existe pas renvoie une message ex: "Operateur n'existe pas"
          */
+    }
+
+    public static function checkFirstNumber($num)
+    {
+
+        $num = substr($num, 2, -6);
+        
     }
 }
