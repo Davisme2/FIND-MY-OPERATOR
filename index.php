@@ -96,9 +96,7 @@ require_once 'Number.php';
     ?>
   </form>
 
- <?php 
- if(isset($_POST['numero'])) {
-  var_dump(Number::checkFirstNumber($_POST['numero'])); ?>
+ <?php if(isset($_POST['numero'])) {var_dump(Number::checkFirstNumber($_POST['numero'])); ?>
       <br>
 <?php var_dump(Number::checkNumberOperator($_POST['numero'])); } ?>
 
