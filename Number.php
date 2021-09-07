@@ -6,7 +6,7 @@ class Number {
     // Tableau des operateurs
     const TAB_OPERATOR = [
         'Orange' => '07',
-        'Mtn' => '04', // correction de 05 en 04
+        'Mtn' => '05', 
         'Moov'=> '01'
     ];
 
@@ -55,6 +55,7 @@ class Number {
 
                     foreach ($v as $r) {
                         if ($r === $num) {
+                            // retourne le reseau du numero
                             return $k;
                         }
                     }
